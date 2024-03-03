@@ -1,13 +1,3 @@
-#!/usr/bin/python3
-""" fetches http://alx-intranet/hbtn.io/status
-using the requests library.
-"""
-
-import requests
-
-if __name__ == "__main__":
-    r = requests.get("https://alx-intranet.hbtn.io/status")
-
-    print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+#!/bin/bash
+# This script takes in a URL as an argument, sends a GET request to the URL, and displays the body of the response. Also, a header variable X-School-User-Id must be sent with the value 98.
+curl -s "$1" -X GET -H "X-School-User-Id: 98"

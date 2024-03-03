@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-""" sends a request to the URL and displays the value of
-the variable X-Request-Id in the response header.
-"""
-from sys import argv
-import requests
-
-if __name__ == "__main__":
-    url = argv[1]
-
-    r = requests.get(url)
-    print(r.headers.get('X-Request-Id'))
+#!/bin/bash
+# This script takes in a URL, sends a POST request to the passed URL, and displays the body of the response. A variable 'email' must be sent with the value 'test@gmail.com'. A variable 'subject' must be sent with the value 'I will always be here for PLD'.
+curl -s "$1" -X POST -d "email=test@gmail.com&subject=I will always be here for PLD"
